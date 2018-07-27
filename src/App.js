@@ -36,7 +36,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router basename={'/~dachskat/CaloryTracker'}>
+        <Router basename={'/~eisenhar/WebDevJS/Final'}>
           <div className="App"> 
             <Route path="/" component={Header} />
             <Route path="/login" component={Login} />
