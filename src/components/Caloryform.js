@@ -1,12 +1,8 @@
-//react basis
 import React, { Component } from 'react';
 import '../App.css';
 import PropTypes from 'prop-types';
-//redux
 import { connect } from 'react-redux';
-//Router
 import { withRouter } from 'react-router-dom';
-//Component
 import { createCalories } from '../actions/caloryActions';
 
 class Caloryform extends Component {
@@ -41,18 +37,20 @@ class Caloryform extends Component {
 
   render(){
     return(
-      <div>
-        <h3>Calorien manuell eintragen</h3>
+      <div className="Add-bg">
+        <h3>Kalorien manuell eintragen</h3>
         <form onSubmit={this.onSubmit}>
           <div>
             <label>Name:</label><br />
             <input type="text" name="foodName" onChange={this.onChange} value={this.state.foodName} />
           </div>
+          <br/>
           <div>
             <label>Kalorien:</label><br />
             <input type="int" name="calories" onChange={this.onChange} value={this.state.calories} />
           </div>
-          <button type="submit">Eintragen</button>
+          <br/>
+          <button className="Add-button" type="submit">Eintragen</button>
         </form>
       </div>
     )

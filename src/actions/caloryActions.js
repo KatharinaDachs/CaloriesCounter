@@ -5,7 +5,7 @@ import { caloriesData } from '../data/CaloryData';
 
 //Show all Calorien ...
 export const fetchCalories = () => dispatch => {
-  console.log('fetching Workouts');
+  console.log('fetching my Calories');
   const gcEndPoint = `https://api.graph.cool/simple/v1/cjk2s6zye0f1w0154378prmx3`
   const gcQuery = `query {allCalorieses {id foodName calories}}`
   request (gcEndPoint, gcQuery)
@@ -19,7 +19,7 @@ export const fetchCalories = () => dispatch => {
 
 //getCalorien
 export const getCalories = id => dispatch => {
-  console.log('get Calories');
+  console.log('get my Calories');
   const gcEndPoint = `https://api.graph.cool/simple/v1/cjk2s6zye0f1w0154378prmx3`
   const gcQuery = `query getOneCalories($id: ID!)
   { Calories(id: $id)
@@ -39,7 +39,6 @@ export const getCalories = id => dispatch => {
 
 //User zu speichern
 export const createCalories = caloriesData => dispatch => {
-  console.log('Actioncreator Workouts');
   const gcEndPoint = `https://api.graph.cool/simple/v1/cjk2s6zye0f1w0154378prmx3`
   const gcQuery = `mutation createNewCalories($foodName: String!, $calories: Int!)
   {  createCalories (foodName: $foodName, calories: $calories )
@@ -61,7 +60,7 @@ export const createCalories = caloriesData => dispatch => {
 
 //Update
 export const updateCalories = caloriesData => dispatch => {
-  console.log('Actioncreator updateWorkouts');
+  console.log('update my Calories');
   const gcEndPoint = `https://api.graph.cool/simple/v1/cjk2s6zye0f1w0154378prmx3`
   const gcQuery = `mutation updateActCalories($id: ID!, $foodName: String!, $calories: Int!)
   {  updateCalories ( id: $id, foodName: $foodName, calories: $calories)
@@ -84,7 +83,7 @@ export const updateCalories = caloriesData => dispatch => {
 
 //delete
 export const deleteCalories = id => dispatch => {
-  console.log('actioncreator deleteCalories');
+  console.log('deleteCalories');
   const gcEndPoint = `https://api.graph.cool/simple/v1/cjk2s6zye0f1w0154378prmx3`
   const gcQuery = `mutation deleteActCalories($id: ID!)
   {  deleteCalories ( id: $id )
@@ -102,8 +101,3 @@ export const deleteCalories = id => dispatch => {
     })
   })
 };
-
-/*mutation {
- deleteLoginData (id: "cjjuf37u30kxi0181l5s3nvlq" )
-    { id gender name email password }
-}*/

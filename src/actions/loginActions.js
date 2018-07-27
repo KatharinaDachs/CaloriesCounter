@@ -5,7 +5,7 @@ import { userData } from '../data/UserData';
 
 //Show all User ...
 export const fetchUser = () => dispatch => {
-  console.log('fetching');
+  console.log('fetch');
   const gcEndPoint = `https://api.graph.cool/simple/v1/cjk2s6zye0f1w0154378prmx3`
   const gcQuery = `query {allLoginDatas {id email gender name password}}`
   request (gcEndPoint, gcQuery)
@@ -19,7 +19,7 @@ export const fetchUser = () => dispatch => {
 
 //Registrieren
 export const createUser = userData => dispatch => {
-  console.log('action create user');
+  console.log('action create my user');
   const gcEndPoint = `https://api.graph.cool/simple/v1/cjk2s6zye0f1w0154378prmx3`
   const gcQuery = `mutation createAccount($gender: String!, $name: String!, $email: String!, $password: String!)
   {  createUser(
@@ -38,7 +38,6 @@ export const createUser = userData => dispatch => {
     "email": userData.email,
     "password": userData.password
   }
-  console.log('sendet request...');
   request (gcEndPoint, gcQuery, gcVariables )
   .then(user => {
     dispatch({
@@ -65,7 +64,7 @@ export const loginUser = userData => dispatch => {
     "email": userData.email,
     "password": userData.password
   }
-  console.log('sendet login request...');
+  console.log('send login request');
   request (gcEndPoint, gcQuery, gcVariables )
   .then(user => {
     dispatch({

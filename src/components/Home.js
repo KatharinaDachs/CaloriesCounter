@@ -1,12 +1,9 @@
-//React Basis
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-//redux
 import { connect } from 'react-redux';
-//Router
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-//Actions
 import { fetchCalories, deleteCalories } from '../actions/caloryActions';
 
 class Calories extends Component {
@@ -24,7 +21,6 @@ class Calories extends Component {
     }
     if(nextProps.deletedCalory){
       var array = this.props.calorie;
-      console.log(array[0]);
       this.props.calorie.splice(nextProps.deletedCalory);
     }
   }
@@ -32,9 +28,10 @@ class Calories extends Component {
   render(){
     const caloryParts = this.props.calorie.map(calory => (
       <div key={calory.foodName}>
-        <h3>{calory.foodName}</h3>
+        <hr className="Home-hr"/>
+        <h4>{calory.foodName}</h4>
         <p>{calory.calories}</p>
-        <button onClick={(e) => {
+        <button className="Home-button" onClick={(e) => {
           e.preventDefault();
           this.props.deleteCalories(calory.id);
         }}>Eintrag Löschen</button><Link to={`/calory/${calory.id}`} > Eintrag Bearbeiten</Link>
@@ -42,7 +39,7 @@ class Calories extends Component {
     ));
 
     return(
-      <div>
+      <div className="Home-bg">
         <h1>Home</h1>
         <h3>So viel hast du diesen Tag aufgenommen:</h3>
         { caloryParts }

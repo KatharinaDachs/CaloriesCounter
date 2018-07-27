@@ -1,12 +1,9 @@
-//react basis
+
 import React, { Component } from 'react';
 import '../App.css';
 import PropTypes from 'prop-types';
-//redux
 import { connect } from 'react-redux';
-//Router
 import { withRouter } from 'react-router-dom';
-//Component
 import { createUser } from '../actions/loginActions';
 
 class Register extends Component {
@@ -38,33 +35,40 @@ class Register extends Component {
     };
 
     this.props.createUser(user);
+    window.location.assign("/login");
   }
 
   render(){
     return(
-      <div>
-        <h1>Registrieren</h1>
-        <form onSubmit={this.onSubmit}>
-          <div>
-            <label>weiblich</label>
-            <input type="radio" name="gender" onChange={this.onChange} value={"female"} />
-            <label>männlich</label>
-            <input type="radio" name="gender" onChange={this.onChange} value={"male"} />
-          </div>
-          <div>
-            <label>Name:</label><br />
-            <input type="text" name="name" onChange={this.onChange} value={this.state.name} />
-          </div>
-          <div>
-            <label>E-Mail-Adresse:</label><br />
-            <input type="email" name="email" onChange={this.onChange} value={this.state.email} />
-          </div>
-          <div>
-            <label>Passwort:</label><br />
-            <input type="password" name="password" onChange={this.onChange} value={this.state.password} />
-          </div>
-          <button type="submit">Registrieren</button>
-        </form>
+      <div className="Register-padding">
+        <div className="Register-bg">
+          <h1>Registrieren</h1>
+          <form onSubmit={this.onSubmit}>
+            <div>
+              <label>weiblich</label>
+              <input type="radio" name="gender" onChange={this.onChange} value={"female"} />
+              <label>männlich</label>
+              <input type="radio" name="gender" onChange={this.onChange} value={"male"} />
+            </div>
+            <br/>
+            <div>
+              <label>Name:</label><br />
+              <input type="text" name="name" onChange={this.onChange} value={this.state.name} />
+            </div>
+            <br/>
+            <div>
+              <label>E-Mail-Adresse:</label><br />
+              <input type="email" name="email" onChange={this.onChange} value={this.state.email} />
+            </div>
+            <br/>
+            <div>
+              <label>Passwort:</label><br />
+              <input type="password" name="password" onChange={this.onChange} value={this.state.password} />
+            </div>
+            <br/>
+            <button className="Button" type="submit">Registrieren</button>
+          </form>
+        </div>
       </div>
     )
   }

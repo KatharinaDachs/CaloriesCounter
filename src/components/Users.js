@@ -1,17 +1,13 @@
-//React Basis
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-//redux
 import { connect } from 'react-redux';
-//Router
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-//Actions
 import { fetchUser } from '../actions/loginActions';
 
 class Users extends Component {
   componentWillMount(){
-    console.log(123);
     this.props.fetchUser();
   }
 
@@ -58,7 +54,7 @@ Users.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  users: state.logins.items, //index.js
+  users: state.logins.items, 
   newUser: state.logins.item
 })
 

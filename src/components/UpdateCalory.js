@@ -1,12 +1,9 @@
-//react basis
+
 import React, { Component } from 'react';
 import '../App.css';
 import PropTypes from 'prop-types';
-//redux
 import { connect } from 'react-redux';
-//Router
 import { withRouter } from 'react-router-dom';
-//Component
 import { updateCalories, getCalories } from '../actions/caloryActions';
 
 
@@ -57,22 +54,25 @@ class UpdateCalory extends Component {
 
   render(){
     return(
-      <div className="App">
+      <div className="Update">
         <h3>Calorien bearbeiten</h3>
         <form onSubmit={this.onSubmit}>
           <div>
             <label>ID: </label><br />
             <input type="text" name="id"  value={this.state.id} readOnly />
           </div>
+          <br/>
           <div>
             <label>Name:</label><br />
             <input type="text" name="foodName" onChange={this.onChange} value={this.state.foodName} />
           </div>
+          <br/>
           <div>
             <label>Kalorien:</label><br />
             <input type="Int" name="calories" onChange={this.onChange} value={this.state.calories} />
           </div>
-          <button type="submit">Eintragen</button>
+          <br/>
+          <button className="Update-button" type="submit">Eintragen</button>
         </form>
       </div>
     )
@@ -82,8 +82,6 @@ class UpdateCalory extends Component {
 const mapStateToProps = reduxState => {
   console.log("in mapStateToProps: ", reduxState.calorie.item)
   return ({
-    // calorie ist der Reducer!
-    // reduxState der Parameter der Arrow-Function
     singleCalorie: reduxState.calorie.item
   })
 }

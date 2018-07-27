@@ -12,7 +12,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Register from './components/Register';
 import Login from './components/Login';
 import Home from './components/Home';
-import Caloryform from './components/Workoutform';
+import Caloryform from './components/Caloryform';
 import Users from './components/Users';
 import UpdateCalory from './components/UpdateCalory';
 
@@ -36,10 +36,10 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router basename={'/'}>
-          <div className="App"> {/*richtig das zweimal className="App"?*/}
+        <Router basename={'/~dachskat/CaloryTracker'}>
+          <div className="App"> 
             <Route path="/" component={Header} />
-            <Route path="/" component={Login} />
+            <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/home" component={Home} />
             <Route path="/home" component={Caloryform} />

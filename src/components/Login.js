@@ -1,13 +1,10 @@
-//react basis
+
 import React, { Component } from 'react';
 import '../App.css';
 import PropTypes from 'prop-types';
-//redux
 import { connect } from 'react-redux';
-//Router
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-//Component
 import { loginUser } from '../actions/loginActions';
 
 class Login extends Component {
@@ -25,11 +22,9 @@ class Login extends Component {
 
   componentWillReceiveProps(nextProps){
     if(nextProps.userLogin){
-      console.log('antwort erhalten');
-      //window.location.assign("/home")
-      //ROUTING!!
+      window.location.assign("/home")
+      //ROUTING!! diese Stelle ist entscheidend ob Routing oder Registrierung funktioniert
     }
-    
   }
 
   onChange(e){
@@ -47,30 +42,30 @@ class Login extends Component {
     this.props.loginUser(user);
     console.log('loginUser ausgeführt');
 
-    //this.props.history.push("/home");
-
   }
 
   render(){
     return(
-      <div>
-        <h1>Login</h1>
-          <form onSubmit={this.onSubmit} className="register">
-            <div>
-              <label>E-Mail:</label> <br />
-              <input type="email" name="email" onChange={this.onChange} value={this.state.email}/>
-            </div>
-            <br />
-            <div>
-              <label>Passwort: </label> <br />
-              <input type="password" name="password" onChange={this.onChange} value={this.state.password}/>
-            </div>
-            <br />
-            <button type="submit">Login</button>
-            <br />
-            <br />
-            <Link to={`/register`}> Sign in </Link>
-          </form>
+      <div className="Login-bg">
+        <div className="Login-opacity">
+          <h1>Login</h1>
+            <form onSubmit={this.onSubmit} className="Register">
+              <div>
+                <label>E-Mail:</label> <br />
+                <input type="email" name="email" onChange={this.onChange} value={this.state.email}/>
+              </div>
+              <br />
+              <div>
+                <label>Passwort: </label> <br />
+                <input type="password" name="password" onChange={this.onChange} value={this.state.password}/>
+              </div>
+              <br />
+              <button className="Button" type="submit">Login</button>
+              <br />
+              <br />
+              <Link to={`/register`}> Sign in </Link>
+            </form>
+        </div>
       </div>
     )
   }

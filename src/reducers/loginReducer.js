@@ -8,19 +8,19 @@ const initialState = {
 export default function(state = initialState, action) {
   switch(action.type) {
     case FETCH_USERNAME:
-      console.log('reducer_fetch');
+      console.log('reducer fetch');
       return{
         ...state,
         items: action.payload
       }
     case NEW_USER:
-    console.log('reducer_new_user');
+    console.log('reducer new user');
       return {
         ...state,
         item: action.payload
       }
     case LOGIN_USER:
-    console.log('reducer_login');
+    console.log('reducer login');
       return{
         ...state,
         item: action.payload

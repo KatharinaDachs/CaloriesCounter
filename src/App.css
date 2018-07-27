@@ -24,7 +24,8 @@ body
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 1.3mm;
-  font-size: 20px;}
+  font-size: 20px;
+}
 
 .App-title {
   font-size: 1.5em;
@@ -50,18 +51,125 @@ body
   text-decoration: none;
   letter-spacing: 1.3mm;
 }
-@media screen and (min-width: 362px) { /* entspricht > 480px @16px */
-  /*body{
-  background-image: none;
-  background-color: #BF848A;
-}*/
+
+.Button, .Update-button{
+  border: none;
+  padding: 9px 23px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 26px;
 }
 
-@media screen and (min-width: 64em) { /* entspricht > 1024px @16px */
-  /*body{
-  background-image: url("weFit.jpg");
-  background-color: #BF848A;
-}*/
+.Login-bg{
+  background-color: #C2AAFF;
+  opacity: 0.85;
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 27px;
+  padding-top: 1px;
+}
+
+.Login-opacity{
+  opacity: 1;
+}
+
+.Register-bg, .Update{
+  background-color: rgba(34, 34, 34, 0.6);
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 27px;
+  padding-top: 1px;
+  color: white;
+}
+
+.Home-bg{
+  background-color: #C2AAFF;
+  opacity: 0.85;
+  width: 550px;
+  margin: 0 auto;
+  padding-bottom: 35px;
+  padding-top: 1px;
+}
+
+.Home-hr{
+  width: 85%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.Home-button, .Add-button{
+  margin: 4px 20px;
+  border: none;
+  padding: 4px 16px 9px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 26px;
+}
+
+.Add-bg{
+  margin: 90px auto 0;
+  background-color:  rgba(34, 34, 34, 0.6);
+  color: white;
+  padding: 20px 0 45px;
 }
 
 
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .App-header {
+    padding: 20px 43px 46px;
+  }
+  .App-intro {
+    font-size: 40px;
+  }
+
+  .btn, .btn-signin, .btn-sm{
+    margin-top: 11px;
+  }
+  .btn, .btn-login, .btn-sm{
+    margin-top: 11px;
+  }
+
+  .Register-padding{
+    padding-top: 70px;
+    padding-bottom: 150px;
+  }
+
+  .Home-bg{
+    width: 100%;
+    padding-top: 12px;
+  }
+
+  .Home-button, .Add-button{
+    margin: 4px 9px 4px 0;
+    padding: 4px 9px 9px;
+  }
+
+  .Update{
+    margin-bottom: 100px;
+  }
+}
+
+@media screen and (min-width: 768px) { 
+
+  .Register-padding{
+    padding-top: 70px;
+    padding-bottom: 150px;
+  }
+  
+  .Login-bg{
+    width: 550px;
+  }
+  
+  .Register-bg, .Update{
+    width: 550px;
+  }
+  
+  .Update{
+    margin-bottom: 130px;
+  }
+}
