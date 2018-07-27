@@ -16,12 +16,14 @@ import Caloryform from './components/Workoutform';
 import Users from './components/Users';
 import UpdateCalory from './components/UpdateCalory';
 
+
 const Header = () => {
   return(
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">Calory Tracker</h1>
+      <header className="App-header" >
+      Calory Tracker
+      <a href="/login" class="btn btn-login btn-sm">Login</a>
+      <a href="/register" class="btn btn-signin btn-sm">Signin</a>
       </header>
       <p className="App-intro">
         What have you eaten today?
