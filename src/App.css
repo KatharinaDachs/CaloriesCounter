@@ -1,0 +1,52 @@
+body
+{
+  background-position: right top;
+   background-attachment: fixed;
+   background-size: 100%;
+   background-repeat: no-repeat;
+   background-image: url("FruitCubes.jpg");
+  background-size: cover;
+
+}
+
+.App {
+  text-align: center;
+  
+  width: auto;
+  height: 100%
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: rgba(34, 34, 34, 0.4);
+  height: 30px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+@media screen and (min-width: 362px) { /* entspricht > 480px @16px */
+  /*body{
+  background-image: none;
+  background-color: #BF848A;
+}*/
+}
+
+@media screen and (min-width: 64em) { /* entspricht > 1024px @16px */
+  /*body{
+  background-image: url("weFit.jpg");
+  background-color: #BF848A;
+}*/
+}
+
+
